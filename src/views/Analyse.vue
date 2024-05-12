@@ -53,7 +53,7 @@ section h3 {
                     <p>Patchwork</p>
                 </h1>
                 <p class="mt-16 mb-4 text-xl">
-                    We're desperate to stop these.
+                    We're desperate to stop these. (Unfinished Page)
                 </p>
             </div>
         </div>
