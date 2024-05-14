@@ -73,6 +73,8 @@
                 </div>
             </li>
         </ul>
+        <p class=" text-center text-2xl my-4" style="font-weight: 800;">A Corner of MGC</p>
+        <img src="https://s2.loli.net/2023/12/01/zQybXdhe1oKS5Op.jpg" alt="">
     </section>
 </template>
 <script setup lang="ts">

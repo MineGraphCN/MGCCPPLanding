@@ -135,7 +135,7 @@ import QACode from '@/components/QACode.vue';
                 </p>
             </div>
             <div class="faq-item">
-                <h3>Q: What do I need to do?</h3>
+                <h3>Q: What sheall I do?</h3>
 
                 <p>- Signing any of the agreements is recommended</p>
                 <p>- Proof of willingness to appeal, subject to approval, varies for each author in terms of how many

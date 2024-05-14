@@ -22,10 +22,18 @@ section h3 {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+p>span {
+    font-weight: 800;
+}
+
+.grid>div {
+    margin: 1rem;
+}
 </style>
 
 <template>
-    <div id="header-container" class="content-center" style="padding: 5em; height: 70vh">
+    <div id="header-container" class="content-center" style="padding: 5em; height: 100vh">
         <div id="header-logo" class="-z-50 absolute h-full bg-cover w-full top-0 right-0" style="
                 background-image: url(https://s2.loli.net/2023/11/29/iH1mlfOEUoSjuFv.png);
                 background-position: 50vh 50%;
@@ -33,9 +41,9 @@ section h3 {
             "></div>
         <div id="header-warpper" class="relative flex items-center content-center text-center z-auto">
             <div id="header-img">
-                <img src="https://s2.loli.net/2023/12/01/scafluLSBnGyJkq.png" style="
+                <img src="https://s2.loli.net/2024/05/15/6GP2TgYyVet485K.jpg" style="
                         min-height: 30vh;
-                        height: 30lvw;
+                        height: 50lvw;
                         right: 10vw;
                         top: 0;
                         z-index: 0;
@@ -47,12 +55,12 @@ section h3 {
                     margin-top: 4rem;
                     z-index: 0;
                 ">
-                <h1 class=" " style="font-size: 7svh; line-height: 1.1">
+                <h1 class="  text-left text-amber-400 " style="font-size: 7svh; line-height: 1.1">
                     <p>Impersonation</p>
                     <p>Resale</p>
                     <p>Patchwork</p>
                 </h1>
-                <p class="mt-16 mb-4 text-xl">
+                <p class=" text-left smt-16 mb-4 text-xl">
                     We're desperate to stop these. (Unfinished Page)
                 </p>
             </div>
@@ -60,184 +68,258 @@ section h3 {
     </div>
     <section>
         <div id="cases-report" class=" ">
-            <p class=" text-center">
+            <p class=" text-center  text-amber-500 ">
                 China's copyright awareness has been criticized by the world,
                 with the following ringleaders in the MC UGC community
             </p>
             <Tabs default-value="zhang" class="space-y-4 z-10">
                 <TabsList style="" class="w-full bg-transparent">
-                    <TabsTrigger value="zhang"> Zhang </TabsTrigger>
-                    <TabsTrigger value="yun"> Yun </TabsTrigger>
-                    <TabsTrigger value="pian"> Pian </TabsTrigger>
+                    <TabsTrigger value="zhang"> A </TabsTrigger>
+                    <TabsTrigger value="yun"> B </TabsTrigger>
+                    <TabsTrigger value="pian"> C </TabsTrigger>
                     <TabsTrigger value="mass"> The Mass </TabsTrigger>
                 </TabsList>
-                <TabsContent value="zhang" class="space-y-4">
-                    Misconduct: 张嫂小雨(ZhangSao Xiaoyu) used the splicing of
-                    high-definition modern style textures such as TMEO, UMSOEA,
-                    etc., to impersonate her own original works. She broadcasted
-                    on the Internet, promoted them, and slandered other authors.
-                    She also entrusted 殷南昭(Yin Nan Zhao) to sell her
-                    Minecraft integration package on the crowdfunding platform,
-                    which contained a large number of unauthorized domestic and
-                    foreign mods, shaders, and textures. Filthy lucre: About 50w
-                    RMB (84145 USD)
+                <TabsContent value="zhang" class="space-y-4 flex">
+                    <div class=" flex-1">
+                        <p>
+                            <span>Misconduct: </span>A-1 used spliced HQ write-up packages such as TMEO (15%), UMSOEA
+                            (50%),
+                            UI
+                            (30%), etc. and passed them off as her own original work. It broadcasts and publicizes
+                            itself on
+                            the
+                            Internet and defames other authors. She also commissioned A-2 to sell Minecraft Integration
+                            Packs on
+                            crowdfunding platforms, which contain a large number of unauthorized domestic and foreign
+                            mods,
+                            shaders and textures.
+                        </p>
+                        <p>
+                            <span>
+                                Dirty Profits:
+                            </span> About 60w RMB ($84,145 USD)
+                        </p>
+                    </div>
+                    <div class=" flex-1">
+                        <img src="https://s2.loli.net/2024/05/15/YNgnX5qo2sHLRcZ.jpg" alt="">
+                    </div>
+
                 </TabsContent>
                 <TabsContent value="yun" class="space-y-4">
-                    云鹤亭社(Yun Ting He She) is a website that sells well-known
-                    MC resource packs, shaders, game integration packs, maps,
-                    and community models on its website. The website’s profits
-                    are considerable, and its browsing and download volumes are
-                    also very large. In addition, 云鹤亭社 also provides several
-                    levels of VIP for people who want more resources, such as
-                    PTGI, BSL, ... Filthy lucre: About 30w RMB (42072
-                    USD)</TabsContent>
+                    <p>
+                        <span>
+                            Misconduct:
+                        </span>
+                        B is a website that sells a very, very large number of well known MC resource packs, shaders,
+                        game
+                        integration packs, maps, and community models for almost the vast majority of well known shaders
+                        and
+                        resource packs on its website. The site is very profitable and gets a lot of views and
+                        downloads. In
+                        addition, Site B offers several levels of VIPs for users who need more resources, such as PTGI,
+                        BSL,...
+                    </p>
+                    <p>
 
-                <TabsContent value="pian" class="space-y-4"><span>
-                        <h3>
-                            <p>Know it all:&nbsp;</p>
+
+                        <img src="https://s2.loli.net/2024/05/15/5YzXHU6NwdJWL7R.jpg" alt="">
+
+                    </p>
+                    <p>
+                        <span>
+                            Dirty Profits:
+                        </span>About 30w yuan ($42,072)
+                    </p>
+
+                </TabsContent>
+
+                <TabsContent value="pian" class="space-y-4 flex  space-x-7  items-center">
+                    <div class=" flex-1">
+                        <div>
+                            <h3>
+                                Bandits
+                            </h3>
                             <p>
-                                <span><a href="https://www.bilibili.com/read/cv23207120/">Pianmu made a very poor
-                                        quality video
-                                        tutorial on electric generation, but he
-                                        did not accept any criticism or
-                                        suggestions, but arrogantly said that he
-                                        was better than others, and said to the
-                                        famous electric generation logistics
-                                        “I’m better than you”, and continued to
-                                        send private messages to show off the
-                                        increase of fans and his behavior will
-                                        not be punished.</a></span><br />
+                                C produces very poor work, videos and sells them at a high price, and is sarcastic about
+                                any calm advice in the comments section and accuses those who offer advice of being
+                                jealous. At the same time he constantly harasses and satirises those who have offered
+                                advice via private messages and brags about his fan base.
                             </p>
+
+                        </div>
+                        <div>
+
+                            <h3>Selling Mods</h3>
+
+
                             <p>
-                                <span><br /></span>
+                                C Also sells integration packs on crowdfunding platforms, which contain a large number
+                                of
+                                internationally renowned mods, textures, and shaders. And is proud of it and thinks that
+                                the
+                                authors of these UGC deserve it
                             </p>
-                        </h3>
-                        <h3><span>Stealing other people’s Mod:&nbsp;</span></h3>
-                        <p>
-                            <span>Pianmu integrated other people’s Mod into his
-                                own Mod pack, and then sold it on Douyin,
-                                violating the game’s Mod usage agreement, and
-                                infringing on the original author’s intellectual
-                                property and labor achievements.</span>
-                        </p>
-                        <p><br /></p>
-                        <h3>Misleading minors:&nbsp;</h3>
-                        <blockquote>
-                            T<span>here are many underage MC players among
-                                Pianmu’s fans, whose values and intellectual
+                        </div>
+                        <div>
+
+                            <h3>"They deserve it."</h3>
+
+                            <p>There are many underage MC players among
+                                C’s fans, whose values and intellectual
                                 property awareness have not yet been formed, but
-                                Pianmu did not give them a positive guidance,
+                                C did not give them a positive guidance,
                                 but indulged and guided them to become his
                                 “filial sons”, defending his evil deeds,
                                 damaging their moral outlook and creative
-                                literacy.</span>
-                            <p><br /></p>
-                        </blockquote>
-                        <h3>Rampant:</h3>
+                                literacy. He tells them, ‘It's noble to take someone else's stuff. They deserve to be
+                                bullied. They're worse than a dog (where dog has a pejorative connotation, similar to
+                                son of
+                                bitch)’</p>
+                        </div>
+                        <h3>Rampant</h3>
                         <p>
                             <span>Described his low income on the platform, while
-                                pre-ordered a ModelX and publicly said: “Don’t
+                                pre-ordered a ModelX and publicly lamented: “Don’t
                                 wait until 40 years old to achieve the dream of
                                 18 years old”.</span>
                         </p>
                         <p>
-                            <span><br /></span>
                         </p>
-                        <h3>Filthy lucre:</h3>
-                        <p>About 12w RMB (16829 USD)</p>
-                    </span>
+
+                        <p><span>Filthy lucre: </span>About 60w RMB </p>
+                    </div>
+                    <div>
+                        <img src="https://s2.loli.net/2023/12/01/LazKqXrZhH7ek1G.png" alt=""
+                            class="flex-1  md:max-w-60 lg:max-w-80">
+                    </div>
                 </TabsContent>
 
                 <TabsContent value="mass" class="space-y-4">
-                    <div data-edit="Col,text" class="ant-col content7-text ant-col-xs-24 ant-col-md-14">
-                        <h2>
-                            There are many problems in the paid resource market
-                            of NetEase's "Minecraft" China Edition, which are
-                            mainly manifested in the following aspects:
-                        </h2>
-                        <h3>
-                            The bad behavior of developers: Some developers use
-                            the development tools and platforms provided by
-                            NetEase to conduct unethical behaviors, such as:
-                        </h3>
-                        <p>
-                            Stealing the skins, mods and texture packs of the
-                            community, or releasing low-quality pure color block
-                            skins, or even using the fame of deceased famous
-                            players (such as Technoblade) to profit.
-                        </p>
-                        <p>
-                            Distributing and forging authorization without the
-                            consent of the original authors, or forging the
-                            authorization certificate of the original authors,
-                            in order to deceive the players.
-                        </p>
-                        <p>
-                            Profiteering by selling the original free or
-                            low-priced resources at a high price, or using the
-                            resource combination package method, to package
-                            multiple resources into a high-priced integration
-                            package, thereby obtaining more benefits.
-                        </p>
-                        <p><br /></p>
-                        <h3>
-                            The irrational reaction of players: Some players
-                            have unreasonable attitudes towards paid resources,
-                            such as:
-                        </h3>
-                        <p>
-                            In order to get something for nothing, regardless of
-                            quality and originality, they support and use the
-                            works of these developers as long as they are free,
-                            and even speak and whitewash for them, and use "free
-                            supremacy" as a reason to suppress the group that
-                            criticizes them, or insult and threaten them on the
-                            developer's homepage.
-                        </p>
-                        <p>
-                            For high-quality paid resources, they are unwilling
-                            to pay a reasonable price, but choose to use pirated
-                            or cracked methods, or conduct malicious bad reviews
-                            or refunds in the comment area.
-                        </p>
-                        <p>
-                            The inaction attitude of the official: Although the
-                            official has set the minimum threshold for the works
-                            of the developers, their own reviewers do not comply
-                            with this rule, resulting in many illegal works
-                            appearing in the market center, and they also ignore
-                            the complaints and feedback of the players, making
-                            the high-quality developers and players feel
-                            disappointed and angry.
-                        </p>
-                        <p><br /></p>
-                        <h2>Not just at NetEase's "Minecraft"</h2>
-                        <p>
-                            Playing the tragic drama, expressing their hard work
-                            in creation, leaving the world soon, leaving the
-                            shader as a heirloom to their disciples, wanting to
-                            use the tear-jerking plot to whitewash their
-                            infringement behavior or make others believe that
-                            this is their own work.
-                        </p>
-                        <p>
-                            Promoting the fake ray-tracing concept, and refusing
-                            to correct the concept popularization, taking NVIDIA
-                            as the doctrine, and then label their resold
-                            resources as "fake ray-tracing" to get more traffic.
-                        </p>
-                        <p>
-                            Making low-tech modifications to the resources, such
-                            as changing a few parameters, and thinking that they
-                            are extremely smart and have surpassed the
-                            contribution of the original author.
-                        </p>
+                    <p>
+                        There are many problems in the paid resource market
+                        of NetEase's "Minecraft" China Edition, which are
+                        mainly manifested in the following aspects:
+                    </p>
+                    <div data-edit="Col,text" class=" grid grid-cols-2  ">
+                        <div>
+
+                            <h3>
+                                The bad behavior of developers
+                            </h3>
+                            <p>Some developers use
+                                the development tools and platforms provided by
+                                NetEase to conduct unethical behaviors, such as:
+                            </p>
+                            <p>
+
+                            <ul>
+                                <li>
+                                    Stealing the skins, mods and texture packs of the
+                                    community, or releasing low-quality pure color block
+                                    skins, or even using the fame of deceased famous
+                                    players (such as Technoblade) to profit.
+                                </li>
+                                <li>
+                                    Distributing and forging authorization without the
+                                    consent of the original authors, or forging the
+                                    authorization certificate of the original authors,
+                                    in order to deceive the players.
+                                </li>
+                                <li>
+                                    Profiteering by selling the original free or
+                                    low-priced resources at a high price, or using the
+                                    resource combination package method, to package
+                                    multiple resources into a high-priced integration
+                                    package, thereby obtaining more benefits.
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                        <div>
+
+                            <h3>
+                                The irrational reaction of players
+                            </h3>
+                            <p>
+                                Some players
+                                have unreasonable attitudes towards paid resources,
+                                such as:
+                            </p>
+                            <p>
+
+                            <ul>
+                                <li>
+                                    In order to get something for nothing, regardless of
+                                    quality and originality, they support and use the
+                                    works of these developers as long as they are free,
+                                    and even speak and whitewash for them, and use "free
+                                    supremacy" as a reason to suppress the group that
+                                    criticizes them, or insult and threaten them on the
+                                    developer's homepage.
+                                </li>
+                                <li>
+                                    For high-quality paid resources, they are unwilling
+                                    to pay a reasonable price, but choose to use pirated
+                                    or cracked methods, or conduct malicious bad reviews
+                                    or refunds in the comment area.
+                                </li>
+                                <li>
+                                    The inaction attitude of the official: Although the
+                                    official has set the minimum threshold for the works
+                                    of the developers, their own reviewers do not comply
+                                    with this rule, resulting in many illegal works
+                                    appearing in the market center, and they also ignore
+                                    the complaints and feedback of the players, making
+                                    the high-quality developers and players feel
+                                    disappointed and angry.
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                        <div>
+
+                            <h3>Not just at NetEase's "Minecraft"</h3>
+                            <ul>
+                                <li>
+                                    <p>
+                                        Playing the tragic drama, expressing their hard work
+                                        in creation, leaving the world soon, leaving the
+                                        shader as a heirloom to their disciples, wanting to
+                                        use the tear-jerking plot to whitewash their
+                                        infringement behavior or make others believe that
+                                        this is their own work.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Promoting the fake ray-tracing concept, and refusing
+                                        to correct the concept popularization, taking NVIDIA
+                                        as the doctrine, and then label their resold
+                                        resources as "fake ray-tracing" to get more traffic.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Making low-tech modifications to the resources, such
+                                        as changing a few parameters, and thinking that they
+                                        are extremely smart and have surpassed the
+                                        contribution of the original author.
+                                    </p>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class=" self-center">
+                            <img src="https://s2.loli.net/2024/05/15/qO2y9kcoXejusvm.jpg" alt="">
+                        </div>
+
                     </div>
+
                 </TabsContent>
             </Tabs>
         </div>
     </section>
-    <section>
+    <section class="flex">
         <div>
             <h2>This can be changed</h2>
             <p class=" text-center ">An analyse in different perspective we have token</p>
