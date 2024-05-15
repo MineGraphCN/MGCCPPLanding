@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { toast } from 'vue-sonner'
 import { ArrowRightCircle, Mail } from "lucide-vue-next";
+import { Toaster } from '@/components/ui/sonner'
 
 import {
     Table,
@@ -15,25 +17,65 @@ import {
 import { ref } from "vue";
 var email: string;
 function Subscribe() {
-    console.info('SUBSCRIBE')
-    const jsonData = {
-        email: email, // Add other relevant data if needed
-    };
-    const feishuWebhookURL = 'https://www.feishu.cn/flow/api/trigger-webhook/8c3c423a67d3fc1e2caa3db37efcebc4';
+    //email 空值检验
+    const hypercolSubscribeHook = 'http://www.hypercol.cn/subscribe';
+    var success = false;
+    var errorMsg: string;
+    if (email) {
+        errorMsg = 'Empty input.'
 
-    fetch(feishuWebhookURL, {
-        method: 'POST',
-        mode: 'cors',
+        const jsonData = {
+            email: email, // Add other relevant data if needed
+        };
+        fetch(hypercolSubscribeHook, {
+            method: 'POST',
 
-        headers: {
-            'Content-Type': 'application/json', // Set content type to JSON
-            'Access-Control-Allow-Origin': '*'
-        },
-        body: JSON.stringify(jsonData), // Convert JSON object to string
-    })
-        .then(response => response.json()) // Parse JSON response
-        .then(data => console.log('Webhook response:', data)) // Log response data
-        .catch(error => console.error('Error sending webhook:', error)); // Handle errors
+            headers: {
+                'Content-Type': 'application/json', // Set content type to JSON
+            },
+            body: JSON.stringify(jsonData), // Convert JSON object to string
+        })
+            .then(response => response.json()) // Parse JSON response
+            .then(data => {
+                console.info(data.msg)
+                if (data.msg == 'success') {
+                    success = true;
+                    console.info('true')
+                } else {
+                    errorMsg = data.msg;
+                }
+            }) // Log response data
+            .catch(error => {
+                errorMsg = error;
+            }) // Handle errors
+            .then(() => {
+                if (success) {
+                    toast('Successful Subscribe', {
+                        description: 'We will notice you the motion and achievements at ' + email,
+                        action: {
+                            label: 'Contact directly',
+                            onClick: () => {
+                                const emailAddress = 'support@minegraph.cn'; // Replace with your actual email address
+                                const subject = 'Interested in MGCCPP'; // Replace with your desired email subject
+                                const body = 'Hello,\n\nI would like to get in touch with you.\n\nBest regards'; // Replace with your desired email body
+                                const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                                window.location.href = mailtoLink;
+                            },
+                        },
+                    })
+                } else {
+
+                    toast('Error', {
+                        description: errorMsg,
+
+                    })
+                }
+
+            });
+    }
+
+
+
 }
 
 const invoices = [
@@ -83,6 +125,7 @@ const invoices = [
 const authorNumber = ref(1);
 </script>
 <template>
+    <Toaster />
     <div id="header-container" class="h-svh content-center" style="padding: 5em">
         <div id="header-logo" class="absolute h-full bg-cover w-full top-0 right-0" style="
                 background-image: url(https://s2.loli.net/2023/11/29/iH1mlfOEUoSjuFv.png);
