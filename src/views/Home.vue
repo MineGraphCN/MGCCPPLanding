@@ -14,7 +14,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 var email: string;
 function Subscribe() {
     //email 空值检验
@@ -122,7 +122,27 @@ const invoices = [
         paymentMethod: "Credit Card",
     },
 ];
-const authorNumber = ref(1);
+const authors = ref([]);
+const works = ref([]);
+
+const fetchData = async () => {
+    try {
+        const response = await fetch('http://www.hypercol.cn/update', {
+            headers: {
+                'Content-Type': 'application/json', // Set content type to JSON
+            }
+        });
+        const data = await response.json();
+        authors.value = data.authors;
+        works.value = data.works;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+};
+
+onMounted(() => {
+    fetchData();
+});
 </script>
 <template>
     <Toaster />
@@ -198,40 +218,32 @@ const authorNumber = ref(1);
     <section>
         <div id="cooperation" class="flex flex-col self-center items-center text-3xl">
             <h2 style="" class="text-5xl flex m-0">
-                Trusted by
-                <div id="authorNumber" class="authorNumber px-4">
-                    {{ authorNumber }}
-                </div>
-                authors &
-                <div id="authorNumber" class="authorNumber px-4">
-                    {{ authorNumber }}
-                </div>
-                times
+                <span>
+                    Trusted by
+                    <span id="authorNumber" class="authorNumber px-4">
+                        {{ authors.length }}
+                    </span>
+                    Authors &
+                    <span id="authorNumber" class="authorNumber px-4">
+                        {{ works.length }}
+                    </span>
+                    Times
+                </span>
             </h2>
 
-            <Table class="w-100 mx-auto">
-                <TableCaption> See more authors </TableCaption>
-                <TableHeader>
-                    <TableRow>
-                        <TableHead class="w-[100px]"> Author </TableHead>
-                        <TableHead>Status</TableHead>
-                        <TableHead>Days</TableHead>
-                        <TableHead class="text-right"> Amount </TableHead>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    <TableRow v-for="invoice in invoices" :key="invoice.invoice">
-                        <TableCell class="font-medium">
-                            {{ invoice.invoice }}
-                        </TableCell>
-                        <TableCell>{{ invoice.paymentStatus }}</TableCell>
-                        <TableCell>{{ invoice.paymentMethod }}</TableCell>
-                        <TableCell class="text-right">
-                            {{ invoice.totalAmount }}
-                        </TableCell>
-                    </TableRow>
-                </TableBody>
-            </Table>
+            <div>
+                <div class="grid grid-cols-6">
+                    <div v-for="author in authors" class=" m-2  bg-gray-100 p-3 text-center font-semibold">
+                        {{ author }}
+                    </div>
+                </div>
+                <div class="grid grid-cols-6">
+
+                    <div v-for="work in works" class=" m-2  bg-amber-100 p-3 text-center font-thin">
+                        {{ work }}
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
